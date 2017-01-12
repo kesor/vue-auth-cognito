@@ -6,8 +6,8 @@
   "scripts": {
     "test": "tap --cov -Rspec test/unit/index.js",
     "test:watch": "tape-watch test/unit/index.js -p tap-spec",
-    "compile": "babel -d lib/ src/",
-    "prepublish": "npm run compile",
+    "build": "babel -d lib/ src/",
+    "prepublish": "npm run build",
     "coverage": "tap --cov --coverage-report=html --strict test/unit/index.js"
   },
   "repository": "https://github.com/kopterio/vue-auth-cognito",
@@ -34,11 +34,16 @@
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",
     "proxyquire": "^1.7.10",
+    "release-script": "^1.0.2",
     "sinon": "^1.17.6",
     "tap": "^8.0.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3",
     "tape-watch": "^2.2.4",
     "vue": "^2.1.8"
+  },
+  "release-script": {
+    "defaultDryRun": "true",
+    "bowerRepo": "git@github.com:kopterio/vue-auth-cognito-bower.git"
   }
 }
