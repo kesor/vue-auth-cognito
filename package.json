@@ -8,7 +8,9 @@
     "test:watch": "tape-watch test/unit/index.js -p tap-spec",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
-    "coverage": "tap --cov --coverage-report=html --strict test/unit/index.js"
+    "coverage": "tap --cov --coverage-report=html --strict test/unit/index.js",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags && rm -rf build/temp"
   },
   "repository": "https://github.com/kopterio/vue-auth-cognito",
   "author": "Evgeny Zislis <evgeny.zislis@gmail.com>",
